@@ -29,9 +29,7 @@ class git (
   $configs = {}
 ) {
   if ( $package_manage ) {
-    ensure_packages([$package_name], {
-      ensure => $package_ensure
-    })
+    ensure_packages([$package_name])
   }
   
   create_resources(git::config, git_config_hash($configs))
